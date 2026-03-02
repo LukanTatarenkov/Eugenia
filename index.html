@@ -2,146 +2,135 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Світ мистецтва</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світ Мистецтва</title>
     <style>
-        body {
+        /* Базові налаштування */
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
             color: #333;
+            line-height: 1.6;
         }
 
+        /* Шапка сайту */
         header {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background-color: #2c3e50;
             color: white;
+            padding: 3rem 0;
             text-align: center;
-            padding: 40px 20px;
         }
 
-        nav {
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+        header p {
+            font-style: italic;
+            color: #bdc3c7;
+            font-size: 1.2rem;
         }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        section {
-            padding: 40px 20px;
+        /* Основний контент */
+        main {
             max-width: 1000px;
-            margin: auto;
+            margin: 2rem auto;
+            padding: 0 20px;
         }
 
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .card {
-            background-color: white;
-            width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
             padding: 20px;
-            transition: transform 0.3s;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .card:hover {
-            transform: scale(1.05);
+        /* Секції з епохами (CSS Grid для карток) */
+        .art-history {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
+        .era-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .era-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .era-card h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .era-card p {
+            font-size: 0.95rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Підвал сайту */
         footer {
-            background-color: #333;
+            background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        button {
-            background-color: #2575fc;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #6a11cb;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Світ мистецтва</h1>
-    <p>Від живопису до сучасного цифрового мистецтва</p>
-</header>
+    <header>
+        <h1>Світ Мистецтва</h1>
+        <p>Подорож крізь епохи та стилі</p>
+    </header>
 
-<nav>
-    <a href="#about">Про мистецтво</a>
-    <a href="#types">Види</a>
-    <a href="#gallery">Галерея</a>
-</nav>
+    <main>
+        <section class="intro">
+            <p>Мистецтво — це відображення людської душі, історії та культури. Воно дозволяє нам зазирнути в минуле і краще зрозуміти сьогодення через призму творчості видатних майстрів.</p>
+        </section>
 
-<section id="about">
-    <h2>Про мистецтво</h2>
-    <p>
-        Мистецтво — це форма творчої діяльності людини, яка відображає світ через образи,
-        емоції та символи. Воно існує з найдавніших часів і постійно розвивається.
-    </p>
-</section>
+        <section class="art-history">
+            <article class="era-card">
+                <h2>Відродження (Ренесанс)</h2>
+                <p>Епоха, що повернула інтерес до античної культури. Характеризується гуманізмом, відкриттям лінійної перспективи в живописі та глибоким вивченням анатомії. Видатні представники: Леонардо да Вінчі, Мікеланджело, Рафаель.</p>
+            </article>
 
-<section id="types">
-    <h2>Основні види мистецтва</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Живопис</h3>
-            <p>Створення художніх образів за допомогою фарб на полотні або інших поверхнях.</p>
-            <button>Дізнатися більше</button>
-        </div>
+            <article class="era-card">
+                <h2>Імпресіонізм</h2>
+                <p>Напрямок 19-го століття, який прагнув передати швидкоплинні враження від світу, гру світла й тіні. Художники використовували яскраві кольори та видимі мазки пензля. Видатні представники: Клод Моне, П'єр-Огюст Ренуар.</p>
+            </article>
 
-        <div class="card">
-            <h3>Скульптура</h3>
-            <p>Тривимірне мистецтво, що створюється шляхом різьблення, ліплення або лиття.</p>
-            <button>Дізнатися більше</button>
-        </div>
+            <article class="era-card">
+                <h2>Сучасне мистецтво</h2>
+                <p>Період сміливих експериментів з формами, матеріалами та ідеями. Від кубізму до абстракції та поп-арту, сучасне мистецтво кидає виклик традиційним уявленням про прекрасне і змушує задуматися.</p>
+            </article>
+        </section>
+    </main>
 
-        <div class="card">
-            <h3>Музика</h3>
-            <p>Мистецтво звуків, що передає настрій, емоції та ідеї через ритм і мелодію.</p>
-            <button>Дізнатися більше</button>
-        </div>
-    </div>
-</section>
-
-<section id="gallery">
-    <h2>Чому мистецтво важливе?</h2>
-    <p>
-        Мистецтво формує культуру суспільства, розвиває креативність і допомагає людині
-        краще розуміти себе та світ навколо.
-    </p>
-</section>
-
-<footer>
-    <p>© 2026 Світ мистецтва | Створено для навчального проєкту</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Світ Мистецтва. Створено для натхнення та навчання.</p>
+    </footer>
 
 </body>
 </html>
